@@ -1,0 +1,82 @@
+sudo -i
+
+See hidden files
+defaults write com.apple.Finder AppleShowAllFiles true
+killall Finder
+
+Angular
+-------
+ng new hello-world
+ng serve
+Ng g c 
+http://localhost:4200/
+
+Brew
+----
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+
+CREATE A VARIABLE IN THE PATH
+------
+export GRADLE_HOME=/usr/local/opt/gradle/libexec
+export PATH=$GRADLE_HOME/bin:$PATH
+
+touch ~/.bash_profile
+
+MariaDB
+-------
+Dans la directory /usr/local/mariadb/mariadb-10.0.38-osx10.13-x86_64/bin
+./mysql -u root -p
+Ou
+/usr/local/mariadb/mariadb-10.0.38-osx10.13-x86_64/bin/mysql -u root -p
+
+GRANT ALL ON *.* TO 'admin'@'192.168.1.26' IDENTIFIED BY 'cefalu' WITH GRANT OPTION;
+Se connecter avec cet utilisateur en DBeaver
+
+create database guitar default character set utf8 default collate utf8_bin;
+GRANT ALL PRIVILEGES ON guitar.* to guituser@'%' IDENTIFIED BY 'guituser';
+GRANT ALL PRIVILEGES ON guitar.* to guituser@'localhost' IDENTIFIED BY 'guituser';
+
+GRANT ALL PRIVILEGES ON products.* to admin@'%' IDENTIFIED BY 'cefalu';
+GRANT ALL PRIVILEGES ON products.* to admin@'localhost' IDENTIFIED BY 'cefalu';
+
+SET GLOBAL time_zone = '+1:00';
+
+See: https://www.ibm.com/support/knowledgecenter/SSGSCT_9.1.3/install_guide/pac_createdbschema_mysql_noha.html
+
+https://books.google.com.eg/books?id=pKjJDwAAQBAJ&pg=PA211&lpg=PA211&dq=mariadb+create+salt+column&source=bl&ots=PZ51Ftv6o2&sig=ACfU3U0QJiQYt0hHmDyqV0MJTIJ5K3GfxQ&hl=fr&sa=X&ved=2ahUKEwjgm43k0e3nAhXFoXEKHdcNDDAQ6AEwA3oECAkQAQ#v=onepage&q&f=false
+
+sudo launchctl stop com.mariadb.server
+sudo launchctl start com.mariadb.server
+
+SpringBoot
+----------
+
+Create tables automatically
+spring.jpa.database=MYSQL
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+
+
+Tomcat
+------
+./bin/startup.sh (dans la directory /usr/local/apache-tomcat-9.0.31)
+./bin/shutdown.sh
+sudo chmod +x /Library/Tomcat/bin/*.sh
+
+<role rolename="tomcat"/>
+<role rolename="manager-gui"/>
+<role rolename="admin-gui"/>
+<!-- <role rolename="role1"/> -->
+<user username="tomcat" password="cefalu" roles="tomcat,manager-gui,admin-gui"/>
+<!--<user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
+<user username="role1" password="<must-be-changed>" roles="role1"/> -->
+</tomcat-users>
+
+See: https://www.dev2qa.com/how-to-install-tomcat-in-macos/
+See: http://info.usherbrooke.ca/vducharme/ift287/notes/12-Servlet.pdf (for Servlets in tomcat)
+
+
+
+
+
